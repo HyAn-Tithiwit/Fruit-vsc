@@ -1,0 +1,73 @@
+/* ===== FOOTER ===== */
+.site-footer {
+  background-color: #1c1c1c; /* Màu nền đen/xám rất tối */
+  color: #ccc; /* Màu chữ xám nhạt */
+  padding: 3rem 2rem;
+  font-size: 0.9rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-line {
+  border: 0;
+  border-top: 1px solid #444; /* Màu của đường kẻ ngang */
+  margin-bottom: 3rem;
+}
+
+.footer-main {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  flex-wrap: wrap; /* Cho phép xuống dòng trên màn hình nhỏ */
+}
+
+/* Cột trái: Tên & Mạng xã hội */
+.footer-about h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.social-icons a {
+  color: #ccc;
+  font-size: 1.25rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #fff;
+}
+
+/* Cột phải: Các liên kết */
+.footer-links {
+  display: flex;
+  gap: 4rem; /* Khoảng cách giữa các cột "Topic" */
+}
+
+.footer-column h4 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 1.25rem;
+}
+
+.footer-column a {
+  display: block;
+  color: #ccc;
+  text-decoration: none;
+  margin-bottom: 0.75rem;
+  transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+  color: #fff;
+}

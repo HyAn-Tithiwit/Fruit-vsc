@@ -1,0 +1,199 @@
+/* src/pages/Cart.css */
+.cart-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+  min-height: 60vh;
+}
+
+.cart-container.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-empty {
+  text-align: center;
+  padding: 3rem;
+}
+
+.cart-empty .btn-primary {
+  background-color: #222;
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.cart-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* 2/3 cho danh sách, 1/3 cho tóm tắt */
+  gap: 2rem;
+}
+
+/* Cột trái: Danh sách */
+.cart-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-item-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.cart-item-details {
+  flex: 1;
+}
+
+.cart-item-details a {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
+  text-decoration: none;
+}
+.cart-item-details a:hover {
+  text-decoration: underline;
+}
+.cart-item-details p {
+  margin: 0.25rem 0;
+}
+
+.cart-item-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+/* Tái sử dụng .quantity-selector từ trang Detail */
+.quantity-selector {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.quantity-selector button {
+  background: #f5f5f5; border: none; padding: 0 0.75rem; cursor: pointer; font-size: 1.2rem;
+}
+.quantity-selector span {
+  padding: 0.5rem 1rem; font-size: 1.1rem; border-left: 1px solid #ccc; border-right: 1px solid #ccc;
+}
+
+.btn-remove {
+  background: none;
+  border: none;
+  color: #e74c3c;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* Cột phải: Tóm tắt */
+.cart-summary {
+  background-color: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 8px;
+  height: fit-content; /* Tự co giãn theo nội dung */
+}
+
+.cart-summary h3 {
+  margin-top: 0;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.75rem;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.summary-row.total {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.btn-checkout {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #27ae60;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.btn-checkout:disabled {
+  background-color: #aaa;
+}
+
+/* --- THÊM MỚI: CSS CHO NHÓM SELLER VÀ VẬN CHUYỂN --- */
+
+.seller-group {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.seller-group h4 {
+  background-color: #f9f9f9;
+  padding: 0.75rem 1rem;
+  margin: 0;
+}
+
+.seller-group .cart-item {
+  border-bottom: none;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.buyer-address {
+  background: #f0f8ff;
+  border: 1px solid #bde0ff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+.buyer-address p {
+  margin: 0.5rem 0;
+}
+
+.shipping-seller-row {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed #ddd;
+}
+.shipping-seller-row:last-child {
+  border-bottom: none;
+}
+
+.shipping-seller-row strong {
+  font-size: 1rem;
+}
+.shipping-seller-row p {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0.25rem 0;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: 0.5rem;
+}
+
+.radio-group label {
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}

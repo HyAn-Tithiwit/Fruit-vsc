@@ -1,0 +1,241 @@
+/* src/pages/Chat.css */
+.chat-container {
+  display: flex;
+  height: calc(100vh - 120px); /* Chiều cao tối đa (trừ header/footer) */
+  max-width: 1400px;
+  margin: 1rem auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+/* 1. Sidebar */
+.chat-sidebar {
+  width: 300px;
+  flex-shrink: 0;
+  border-right: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-sidebar-header {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+.chat-sidebar-header h3 {
+  margin: 0;
+}
+
+.conversation-list {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.no-convos {
+  padding: 1rem;
+  text-align: center;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.convo-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  border-bottom: 1px solid #f5f5f5;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+.convo-item:hover {
+  background-color: #f9f9f9;
+}
+.convo-item.active {
+  background-color: #eef5ff;
+}
+
+.convo-item img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.convo-details {
+  overflow: hidden;
+}
+.convo-name {
+  display: block;
+  font-weight: 500;
+}
+.convo-last-message {
+  font-size: 0.9rem;
+  color: #555;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 2. Cửa sổ chat */
+.chat-window-main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-window-main .center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #777;
+}
+
+.chat-window-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+.chat-window-header img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.chat-window-header h3 {
+  margin: 0;
+}
+
+.messages-container {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.message-bubble {
+  max-width: 70%;
+  padding: 0.5rem 1rem;
+  border-radius: 18px;
+}
+.message-bubble p {
+  margin: 0;
+  line-height: 1.5;
+  white-space: pre-wrap; /* Giữ các dấu xuống dòng */
+}
+
+.message-bubble.sent {
+  background-color: #007bff;
+  color: white;
+  align-self: flex-end; /* Tin nhắn của mình */
+  border-bottom-right-radius: 4px;
+}
+.message-bubble.received {
+  background-color: #f0f0f0;
+  color: #222;
+  align-self: flex-start; /* Tin nhắn của người khác */
+  border-bottom-left-radius: 4px;
+}
+
+.chat-form {
+  display: flex;
+  padding: 1rem;
+  border-top: 1px solid #eee;
+}
+.chat-form input {
+  flex-grow: 1;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  margin-right: 0.5rem;
+}
+.chat-form button {
+  padding: 0.75rem 1rem;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* --- THÊM MỚI: CSS CHO CHỨC NĂNG MỚI --- */
+
+/* Nút Call ở Header */
+.chat-window-header {
+  justify-content: space-between; /* Đẩy các nút call sang phải */
+}
+.chat-header-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+.chat-header-actions .chat-action-btn {
+  font-size: 1.2rem;
+  padding: 0.5rem;
+}
+.chat-header-actions .chat-action-btn:disabled {
+  background-color: #f0f0f0;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+/* Nút bấm trong Form */
+.chat-action-btn {
+  background: none;
+  border: none;
+  padding: 0 0.5rem;
+  font-size: 1.2rem;
+  color: #555;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.chat-action-btn:hover {
+  color: #007bff;
+}
+
+.chat-form input[type="text"] {
+  margin-left: 0.5rem;
+}
+
+/* Chỉ báo đang tải ảnh */
+.uploading-indicator {
+  padding: 0.25rem 1rem;
+  background-color: #f0f0f0;
+  color: #555;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Tin nhắn là hình ảnh */
+.message-bubble.sent .message-image,
+.message-bubble.received .message-image {
+  max-width: 100%;
+  border-radius: 12px;
+}
+/* Xóa padding của bong bóng khi là ảnh */
+.message-bubble.sent:has(.message-image),
+.message-bubble.received:has(.message-image) {
+  padding: 0;
+  background-color: transparent;
+}
+
+/* Tin nhắn là vị trí */
+.message-location-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+.message-bubble.sent .message-location-link {
+  color: white;
+}
+.message-bubble.received .message-location-link {
+  color: #007bff;
+}

@@ -1,0 +1,132 @@
+/* src/pages/SellerDashboard.css */
+.dashboard-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+.dashboard-container h1 {
+  margin-top: 0;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+/* 1. Khu vực Thống kê */
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.stat-card {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.stat-card h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  color: #555;
+  font-weight: 500;
+}
+
+.stat-card p {
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: #222;
+  margin: 0;
+}
+
+.stat-card span {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.stat-icon {
+  font-size: 2rem;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  opacity: 0.3;
+}
+
+/* 2. Khu vực Lối tắt */
+.dashboard-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.action-card {
+  flex: 1;
+  padding: 1rem;
+  border: 1px dashed #ccc;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.action-card:hover {
+  background-color: #f9f9f9;
+  border-color: #aaa;
+}
+
+/* 3. Khu vực Đơn hàng Gần đây */
+.dashboard-recent-orders {
+  margin-top: 2rem;
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.dashboard-recent-orders h2 {
+  margin-top: 0;
+}
+
+/* Tái sử dụng CSS từ OrderHistory.css */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+th, td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+th {
+  background-color: #f9f9f9;
+}
+.order-id { font-family: 'Courier New', Courier, monospace; font-weight: bold; }
+.status {
+  padding: 0.3rem 0.75rem;
+  border-radius: 12px;
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+.status-pending { background-color: #fef0c7; color: #b54708; }
+.status-shipping { background-color: #d1e9ff; color: #0052cc; }
+.status-completed { background-color: #d1fadf; color: #00695c; }
+.status-cancelled { background-color: #fee2e2; color: #b91c1c; }
+.btn-view-detail {
+  background-color: #222;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+}

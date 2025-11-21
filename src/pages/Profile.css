@@ -1,0 +1,361 @@
+/* src/pages/Profile.css */
+
+/* ===== 1. TRANG HỒ SƠ CHÍNH (ProfilePage) ===== */
+.profile-container {
+  max-width: 975px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.profile-loading {
+  text-align: center;
+  padding: 4rem;
+  font-size: 1.2rem;
+}
+
+/* Header hồ sơ */
+.profile-header {
+  display: flex;
+  gap: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+.profile-avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.profile-info {
+  flex-grow: 1;
+}
+
+.profile-info-top {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.profile-name {
+  font-size: 1.75rem;
+  font-weight: 300;
+  margin: 0;
+}
+
+/* Nút bấm chung */
+.profile-btn, .profile-btn-icon {
+  border: 1px solid #dbdbdb;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  color: #262626;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.profile-btn-icon {
+  padding: 0.6rem;
+  font-size: 1.2rem;
+}
+.profile-btn.primary {
+  background-color: #0095f6;
+  color: white;
+  border: none;
+}
+.profile-btn:hover, .profile-btn-icon:hover {
+  background-color: #f8f8f8;
+}
+
+/* Các nút của chủ sở hữu */
+.profile-owner-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.profile-visitor-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+
+/* Stats */
+.profile-stats {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+.profile-stats span {
+  font-size: 1rem;
+}
+
+.profile-bio p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Tab điều hướng */
+.profile-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  border-top: 1px solid #dbdbdb;
+  margin-top: -1px; /* Nối liền với border của header */
+}
+.profile-tab {
+  border: none;
+  background: none;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #8e8e8e;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.profile-tab.active {
+  color: #262626;
+  border-top: 1px solid #262626;
+}
+
+/* Nội dung tab */
+.profile-tab-content {
+  padding-top: 2rem;
+}
+.profile-posts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.profile-loyalty {
+  text-align: center;
+  padding: 2rem;
+  background-color: #fafafa;
+  border-radius: 8px;
+}
+.loyalty-points {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #007bff;
+  margin: 0.5rem 0;
+}
+
+
+/* ===== 2. TRANG CHỈNH SỬA HỒ SƠ (EditProfilePage) ===== */
+.profile-edit-container {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+}
+.profile-edit-form h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+.form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+.form-group input[type="text"],
+.form-group input[type="tel"],
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.avatar-uploader {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.profile-avatar-preview {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+/* ===== 3. TRANG CÀI ĐẶT (SettingsPage) ===== */
+.settings-container {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+}
+.settings-container h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.settings-list {
+  display: flex;
+  flex-direction: column;
+}
+.settings-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #262626;
+  font-size: 1.1rem;
+}
+.settings-item:hover {
+  background-color: #fafafa;
+}
+.settings-item svg {
+  font-size: 1.5rem;
+  color: #555;
+}
+
+/* --- CSS CHO ĐỊA CHỈ (TRANG XEM) --- */
+.profile-address {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0.75rem;
+}
+
+.profile-address svg {
+  flex-shrink: 0; /* Không co icon lại */
+}
+
+/* --- CSS CHO FORM CHỈNH SỬA ĐỊA CHỈ --- */
+.form-fieldset {
+  border: 1px solid #dbdbdb;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.form-fieldset legend {
+  padding: 0 0.5rem;
+  font-weight: 500;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* --- CSS CHO BẢN ĐỒ TRONG FORM --- */
+.map-picker-group label {
+  font-size: 1.1rem;
+}
+
+.map-picker-group .map-info {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: -0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+/* --- CSS CHO NÚT BẤM PHỤ (ĐANG THEO DÕI) --- */
+.profile-btn.secondary {
+  background-color: #efefef; /* Nền xám nhạt */
+  color: #262626;
+  border-color: #dbdbdb;
+}
+.profile-btn.secondary:hover {
+  background-color: #dbdbdb;
+}
+
+/* --- CSS CHO NÚT STATS --- */
+.stat-button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+.stat-button:hover {
+  text-decoration: underline;
+}
+
+/* --- THÊM MỚI: CSS CHO QUẢN LÝ VƯỜN --- */
+
+.farm-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.farm-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 8px;
+}
+
+.farm-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.farm-item-info strong {
+  font-weight: 500;
+}
+
+.farm-item-info small {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.farm-delete-btn {
+  background: none;
+  border: none;
+  color: #e74c3c;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.farm-delete-btn:hover {
+  background-color: #fee2e2;
+}
+
+.form-divider {
+  border: 0;
+  border-top: 1px dashed #ccc;
+  margin: 1.5rem 0;
+}
+
+.form-subheading {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}

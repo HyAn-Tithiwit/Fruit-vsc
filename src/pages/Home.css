@@ -1,0 +1,223 @@
+/* ---- File: src/pages/Home.css ---- */
+
+/* ===== CÀI ĐẶT CHUNG CHO CÁC NÚT BẤM ===== */
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+.btn-primary {
+  background-color: #222;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #444;
+}
+
+.btn-secondary {
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ccc;
+}
+
+.btn-secondary:hover {
+  background-color: #e0e0e0;
+}
+
+
+/* ===== SECTION 1: HERO ===== */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 400px; /* Chiều cao tối thiểu */
+  padding: 2rem;
+  color: #333; /* Đổi thành #fff nếu ảnh nền của bạn tối */
+  
+  /* THAY THẾ URL NÀY BẰNG ẢNH THẬT CỦA BẠN! 
+    Ảnh quả lê từ mockup:
+  */
+  background-image: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url('https://images.unsplash.com/photo-1601249066824-670067c2f6d8?w=1200&h=500&fit=crop');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+
+/* ===== SECTION 2: CONTENT / IMAGE ===== */
+.content-section {
+  display: flex;
+  align-items: center;
+  gap: 3rem; /* Khoảng cách giữa chữ và ảnh */
+  padding: 4rem 2rem; /* Padding cho section */
+  max-width: 1200px;
+  margin: 0 auto; /* Căn giữa section */
+  /* Dòng background-color: #fff; đã bị xóa ở đây */
+}
+
+.text-content {
+  flex: 1; /* Chiếm 50% không gian */
+}
+
+.text-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.text-content p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.image-content {
+  flex: 1; /* Chiếm 50% không gian */
+}
+
+.image-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px; /* Bo góc ảnh */
+}
+
+/* THÊM MỚI: Chỉ section nào có class .bg-white mới có nền trắng */
+.content-section.bg-white {
+  background-color: #fff;
+}
+
+/* THÊM MỚI: Định nghĩa .button-group (từ Home.jsx)
+*/
+.button-group {
+  display: flex;
+  flex-wrap: wrap; /* Cho phép xuống hàng trên di động */
+  gap: 0.5rem; /* Khoảng cách giữa các nút */
+}
+
+
+/* ===== CHUNG CHO CÁC TIÊU ĐỀ SECTION MỚI ===== */
+.section-heading {
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 2rem; /* Căn lề giống các section khác */
+}
+
+
+/* ===== SECTION 4: PRODUCT GRID ===== */
+.product-section {
+  padding: 4rem 0; /* Chỉ padding trên dưới */
+  background-color: #fff; /* Nền trắng xen kẽ */
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Cột trái 66%, Cột phải 33% */
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem; /* Căn lề giống các section khác */
+}
+
+.product-column-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* THÊM MỚI: Style cho .product-item khi nó là thẻ Link (<a>)
+*/
+.product-item {
+  text-decoration: none; /* Bỏ gạch chân */
+  color: inherit; /* Lấy màu chữ từ cha, không dùng màu link mặc định */
+  display: block; /* Giúp toàn bộ khối có thể click */
+}
+
+.product-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  background-color: #f0f0f0;
+  margin-bottom: 1rem;
+}
+
+/* Tùy chỉnh ảnh có tỉ lệ khác nhau */
+.product-item.featured img {
+  aspect-ratio: 4 / 5; /* Ảnh cao */
+}
+
+.product-column-right .product-item img {
+  aspect-ratio: 4 / 3; /* Ảnh ngang */
+}
+
+
+.product-item h3 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.product-item p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.25rem;
+}
+
+.product-item .price {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #111;
+}
+
+
+/* ===== SECTION 5: FEATURES GRID ===== */
+.features-section {
+  padding: 4rem 0;
+  /* Không set "bg-white", nó sẽ dùng nền xám mặc định */
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 cột bằng nhau */
+  gap: 2.5rem 2rem; /* Khoảng cách dọc & ngang */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.feature-item .icon-wrapper {
+  font-size: 1.5rem; /* Kích thước icon */
+  color: #333;
+  margin-bottom: 0.75rem;
+}
+
+.feature-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.feature-item p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}

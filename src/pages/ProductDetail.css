@@ -1,0 +1,251 @@
+/* src/pages/ProductDetail.css */
+
+.product-detail-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+.product-detail-loading {
+  padding: 4rem;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+/* ===== SECTION 1: MAIN DETAILS ===== */
+.detail-section-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 cột bằng nhau */
+  gap: 3rem;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+/* Cột ảnh */
+.product-image-gallery {
+  width: 100%;
+}
+
+.main-product-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+/* Cột thông tin */
+.product-title {
+  font-size: 2.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.product-prices {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.final-price {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #c0392b;
+}
+
+.original-price {
+  font-size: 1.2rem;
+  color: #777;
+  text-decoration: line-through;
+}
+
+.discount-badge {
+  background-color: #e74c3c;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.product-short-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.product-seller-info {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 2rem;
+  padding: 0.75rem;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+}
+
+.product-seller-info a {
+  color: #007bff;
+  font-weight: 500;
+}
+
+/* Actions: Số lượng & Nút bấm */
+.product-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.quantity-selector {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.quantity-selector button {
+  background: #f5f5ff;
+  border: none;
+  padding: 0 0.75rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.quantity-selector button:hover {
+  background: #eee;
+}
+
+.quantity-selector span {
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+
+.btn-add-to-cart {
+  flex: 1;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  background-color: #222;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.btn-add-to-cart:hover {
+  background-color: #444;
+}
+
+
+/* ===== SECTION 2: RELATED PRODUCTS ===== */
+.related-products-section {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid #eee;
+}
+
+.related-products-section h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+/* Tái sử dụng grid layout từ trang Shop */
+.product-grid-shop {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+/* --- THÊM MỚI: CSS CHO HỘP GIAO HÀNG --- */
+.delivery-estimation-box {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  border: 1px solid #eee;
+}
+
+.delivery-icon {
+  font-size: 2rem;
+  color: #27ae60;
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+.delivery-info {
+  display: flex;
+  flex-direction: column;
+}
+.delivery-info span {
+  font-size: 0.9rem;
+  color: #555;
+}
+.delivery-info strong {
+  font-size: 1rem;
+  color: #111;
+  margin: 0.25rem 0;
+}
+.delivery-info a {
+  color: #007bff;
+  font-weight: 500;
+}
+
+/* --- THÊM MỚI: CSS CHO TAB MÔ TẢ (SECTION 2) --- */
+.product-extra-details {
+  background-color: #fff;
+  border-radius: 8px;
+  margin-top: 3rem;
+  overflow: hidden; /* Để bo góc */
+}
+
+.details-tabs {
+  display: flex;
+  border-bottom: 2px solid #eee;
+  background-color: #f9f9f9;
+}
+
+.tab-btn {
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #555;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.tab-btn:hover {
+  background-color: #f0f0f0;
+}
+
+.tab-btn.active {
+  color: #007bff;
+  border-bottom-color: #007bff;
+}
+
+.tab-content {
+  padding: 2rem;
+  line-height: 1.7;
+}
+
+/* Style cho nội dung HTML */
+.tab-content p {
+  margin-bottom: 1rem;
+}
+.tab-content ul,
+.tab-content ol {
+  padding-left: 20px;
+}
+.tab-content li {
+  margin-bottom: 0.5rem;
+}

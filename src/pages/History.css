@@ -1,0 +1,243 @@
+/* src/pages/History.css */
+.order-history-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+  min-height: 60vh;
+}
+
+.order-history-container h1 {
+  margin-top: 0;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 1rem;
+}
+
+.order-list {
+  width: 100%;
+  overflow-x: auto; /* Cho phép cuộn ngang trên mobile */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f9f9f9;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.order-id {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+
+.order-item-summary {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Định dạng trạng thái (status) */
+.status {
+  padding: 0.3rem 0.75rem;
+  border-radius: 12px;
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+.status-pending { background-color: #fef0c7; color: #b54708; }
+.status-shipping { background-color: #d1e9ff; color: #0052cc; }
+.status-completed { background-color: #d1fadf; color: #00695c; }
+.status-cancelled { background-color: #fee2e2; color: #b91c1c; }
+
+.btn-view-detail {
+  background-color: #222;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+
+.btn-view-detail:hover {
+  background-color: #444;
+}
+
+/* --- CSS CHO CÁC TAB LỌC --- */
+.history-tabs {
+  display: flex;
+  flex-wrap: wrap; /* Cho phép xuống dòng trên mobile */
+  border-bottom: 2px solid #eee;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tab-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #555;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent; /* Đường gạch chân ẩn */
+  cursor: pointer;
+  margin-bottom: -2px; /* Đè lên border-bottom của .history-tabs */
+  transition: all 0.2s ease;
+}
+
+.tab-button:hover {
+  background-color: #f9f9f9;
+  color: #111;
+}
+
+.tab-button.active {
+  color: #007bff; /* Màu xanh (hoặc màu chính của bạn) */
+  border-bottom-color: #007bff;
+}
+
+.tab-button svg {
+  font-size: 1.1rem;
+}
+
+/* --- CSS CHO TRANG CHI TIẾT --- */
+.order-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 1rem;
+}
+
+.order-detail-header h1 {
+  margin: 0;
+  border: none; /* Ghi đè style h1 cũ */
+  padding: 0;
+}
+
+.item-thumbnail {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.order-summary-box {
+  max-width: 450px;
+  margin-left: auto; /* Đẩy sang bên phải */
+  margin-top: 2rem;
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.summary-row.total {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* --- NÚT HỦY ĐƠN HÀNG --- */
+.btn-cancel {
+  background-color: #e74c3c; /* Màu đỏ */
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-cancel:hover {
+  background-color: #c0392b; /* Đỏ đậm hơn */
+}
+
+/* --- THÊM MỚI: CSS CHO THÔNG TIN NGƯỜI MUA/BÁN --- */
+.order-participants {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.participant-box h4 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: #555;
+  font-weight: 500;
+}
+.participant-box p {
+  margin: 0;
+}
+
+.participant-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+}
+.participant-link:hover {
+  text-decoration: underline;
+}
+.participant-link img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* --- THÊM MỚI: CSS CHO TÊN SẢN PHẨM & NGƯỜI BÁN TRONG BẢNG --- */
+.item-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-name-link {
+  font-weight: 500;
+  color: #333;
+  text-decoration: none;
+}
+.item-name-link:hover {
+  text-decoration: underline;
+}
+
+.item-seller-info {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 0.25rem;
+}
+.item-seller-info a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+.item-seller-info a:hover {
+  text-decoration: underline;
+}
